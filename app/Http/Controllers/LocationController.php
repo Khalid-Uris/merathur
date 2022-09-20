@@ -64,7 +64,9 @@ class LocationController extends Controller
      */
     public function show()
     {
-        $show=Location::join('city','city.city_id','locations.city_id')->get();
+        $show=City::with(['location'])->where('city_id',1)->get();
+
+        return response()->json($show);
         return view('merathar.showLocation')->with('show',$show);
         // $getDataloan=add_loan::join('borrowers','borrowers.borrower_id','add_loans.borrower_id')
     }

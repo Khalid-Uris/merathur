@@ -10,7 +10,9 @@ use App\Http\Controllers\LocationImageController;
 use App\Http\Controllers\ResturantController;
 use App\Http\Controllers\ResturantImageController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\UserController;
 use App\Models\Culture;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -133,3 +135,6 @@ Route::get('culture/show',[CultureController::class,'show'])->name('culture.show
 Route::get('culture/edit/{id}',[CultureController::class,'edit'])->name('culture.edit');
 Route::post('culture/update/{id}',[CultureController::class,'update'])->name('culture.update');
 Route::get('culture/destroy/{id}',[CultureController::class,'destroy'])->name('culture.destroy');
+
+
+Route::get('user/index',[UserController::class,'index'])->name('user.index');
